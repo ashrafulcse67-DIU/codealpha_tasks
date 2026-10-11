@@ -33,3 +33,5 @@ tools/build.py        generates every page so navbar, footer and SEO tags stay i
 - Bangla mode translates navigation, headings, labels, results and tool names. The longer "How to use", example and FAQ text is English only.
 - Currency rates built in are approximate reference values, not live.
 - Preferences (theme, language, calculator history, edited rates) are stored in the visitor's own browser only.
+
+If you find this project useful, feel free to ⭐ the repository.

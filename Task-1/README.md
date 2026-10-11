@@ -1,4 +1,4 @@
-Personal Portfolio Website
+# Personal Portfolio Website
 A responsive personal portfolio website: plain HTML, CSS and JavaScript. No framework, no build step for visitors, no dependencies.
 
 Run it

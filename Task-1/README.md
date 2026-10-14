@@ -50,7 +50,7 @@ Portfolio/
 
 ## 🚀 Run Locally
 
-This is primarily a static website, so no frontend build step is required.
+This is primarily a static website, so no frontend build step is required for local viewing.
 
 1. Download or clone this repository.
 2. Open the `Portfolio` folder.
@@ -58,24 +58,20 @@ This is primarily a static website, so no frontend build step is required.
 
 For a more realistic local web-server experience, use the **Live Server** extension in Visual Studio Code and select **Open with Live Server**.
 
-> The contact form uses a Netlify Function. It will not work when `index.html` is opened directly as a local file unless the function is served through a compatible environment.
+> The contact form submissions handled via `_worker.js` require a compatible worker environment (such as Wrangler local development) to test full form functionality locally.
 
-## 📬 Contact Form Deployment
+## 📬 Contact Form & Backend (_worker.js)
 
-The contact form sends requests to:
-
-```text
-/.netlify/functions/send-message
-```
+The contact form sends requests directly to the Cloudflare Worker script (`_worker.js`), which processes the form data and forwards messages (e.g., to your Telegram bot or email).
 
 To use it in production:
 
-1. Deploy the project to Netlify.
-2. Keep the function inside `netlify/functions/`.
-3. Configure any required secrets or environment variables in Netlify's site settings, based on the implementation in `netlify/functions/send-message.js`.
-4. Test the form after deployment.
+1. Connect your repository to **Cloudflare Pages**.
+2. Ensure `_worker.js` is in the root directory so Cloudflare automatically detects it as a module worker.
+3. Configure any required environment variables or secrets in your **Cloudflare Pages Dashboard under Settings > Environment Variables**.
+4. Test the contact form after deployment.
 
-**Security note:** Never commit API tokens, bot tokens, passwords, or other secrets to GitHub. Store them as environment variables in your hosting provider.
+**Security note:** Never commit API tokens, bot tokens, passwords, or other secrets to GitHub. Always store them securely as environment variables in Cloudflare's project settings.
 
 ## 🎨 Customization
 
@@ -95,10 +91,10 @@ Place images in the appropriate folders and make sure the paths in `index.html` 
 
 ## 🌐 Deployment
 
-You can host the static portfolio using **GitHub Pages**, **Netlify**, or another static hosting service.
+This project is optimized for deployment on **Cloudflare Pages**:
 
-- **GitHub Pages:** suitable for the static frontend; the Netlify contact function will not run on GitHub Pages.
-- **Netlify:** suitable for the static frontend and the included Netlify Function.
+- **Cloudflare Pages:** Fully supports both the static frontend assets and the backend logic inside `_worker.js` for handling contact form submissions seamlessly.
+
 
 ## 👨‍💻 Author
 

@@ -27,15 +27,11 @@ A modern, responsive personal portfolio website showcasing my background, techni
 - Netlify Functions (for contact-form handling)
 
 ## 📁 Project Structure
-
-```text
+```
 Portfolio/
 ├── index.html
 ├── .gitignore
-├── netlify.toml
-├── netlify/
-│   └── functions/
-│       └── send-message.js
+├── _worker.js
 ├── images/
 │   ├── announcement/
 │   ├── content/
